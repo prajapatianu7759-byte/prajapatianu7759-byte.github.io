@@ -19,7 +19,19 @@ font-size:20px;
 </head>
 <body>
 <table border="4">
-<center><button><a href="www.google.com">Submit</a></button></center>
+<form id="myForm">
+    <button type="submit" id="submitBtn">Submit</button>
+</form>
+
+<p id="msg" style="color: green; font-weight: bold;"></p>
+
+<script>
+document.getElementById("myForm").onsubmit = function(event) {
+    event.preventDefault();
+    document.getElementById("msg").innerText = "Submitted ✅";
+    document.getElementById("submitBtn").innerText = "Done";
+}
+</script>
 <tr><td>Student Name</td><td><input type="text"/></td></tr>
 <tr><td>Father's Name</td><td><input type="text"/></td></tr>
 <tr><td>Mother's Name</td><td><input type="text"/></td></tr>
